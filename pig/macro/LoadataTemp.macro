@@ -1,0 +1,5 @@
+define LoadataTemp(file) returns result {
+    $result = load '$file' using PigStorage(',')
+AS(OB_END_TIME     :chararray,ID_TYPE         :chararray,ID              :chararray,OB_HOUR_COUNT   :chararray,VERSION_NUM     :chararray,MET_DOMAIN_NAME :chararray,SRC_ID          :int,REC_ST_IND      :chararray,MAX_AIR_TEMP    :chararray,MIN_AIR_TEMP    :chararray,MIN_GRSS_TEMP   :chararray,MIN_CONC_TEMP   :chararray,MAX_AIR_TEMP_Q  :chararray,MIN_AIR_TEMP_Q  :chararray,MIN_GRSS_TEMP_Q :chararray,MIN_CONC_TEMP_Q :chararray,METO_STMP_TIME  :chararray,MIDAS_STMP_ETIME:chararray,MAX_AIR_TEMP_J  :chararray,MIN_AIR_TEMP_J  :chararray,MIN_GRSS_TEMP_J :chararray,MIN_CONC_TEMP_J:chararray );
+};
+

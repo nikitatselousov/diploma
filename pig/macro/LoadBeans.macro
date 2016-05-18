@@ -1,0 +1,5 @@
+define LoadBeans(file) returns result {
+    $result = load '$file' using com.motorolasolutions.bigdata.mcdf.pig.loader.Loader(
+        '$LOG_LEFT_BOUND', '$LOG_RIGHT_BOUND'
+    );
+};

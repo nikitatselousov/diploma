@@ -1,0 +1,5 @@
+define LoadataRain(file) returns result {
+    $result = load '$file' using PigStorage(',')
+AS(ID              :chararray,ID_TYPE         :chararray,OB_DATE         :chararray,VERSION_NUM     :chararray,MET_DOMAIN_NAME :chararray,OB_END_CTIME    :chararray,OB_DAY_CNT      :chararray,SRC_ID          :int,REC_ST_IND      :chararray,PRCP_AMT        :float,OB_DAY_CNT_Q    :chararray,PRCP_AMT_Q      :chararray,METO_STMP_TIME  :chararray,MIDAS_STMP_ETIME:chararray,PRCP_AMT_J:chararray      );
+};
+

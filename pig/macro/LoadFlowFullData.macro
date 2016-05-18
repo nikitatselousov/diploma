@@ -1,0 +1,5 @@
+define LoadFlowFullData(file) returns result {
+    $result = load '$file' using PigStorage(',')
+    AS (LinkRef:chararray,	LinkDescription:chararray,	StartJunction:chararray,	EndJunction:chararray,	StartX:chararray,	StartY:chararray,	EndX:chararray,	EndY:chararray,		StartLat:chararray,	StartLng:chararray,	EndLat:chararray,	EndLng:chararray, SRC_ID:chararray, dist:double);
+};
+

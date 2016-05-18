@@ -1,0 +1,5 @@
+define LoadFlowData(file) returns result {
+    $result = load '$file' using PigStorage(',')
+    AS (LinkRef:chararray,LinkDescription:chararray,Date:chararray,TimePeriod:chararray,AverageJT:chararray,AverageSpeed:double,DataQuality:chararray,LinkLength:double,Flow:double);
+};
+

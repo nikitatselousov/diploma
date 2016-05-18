@@ -1,0 +1,9 @@
+define LoadCSVData1(file) returns result {
+    $result = load '$file' using PigStorage(',')
+    AS (Accident_Index:chararray, Location_Easting_OSGR:int,Location_Northing_OSGR:int,	Longitude:float, Latitude:float,
+    	Police_Force:int, Accident_Severity:int,Number_of_Vehicles:int, Number_of_Casualties:int,Date:chararray,
+    	Day_of_Week:int,Time:chararray,Local_Authority_District:int,Local_Authority_Highway:chararray,
+    	st_Road_Class:int,	st_Road_Number:int,Road_Type:int,Speed_limit:int,Junction_Detail:int,Junction_Control:int,	nd_Road_Class:int, nd_Road_Number:int, Pedestrian_Crossing_Human_Control:int,Pedestrian_Crossing_Physical_Facilities:int,Light_Conditions:int,Weather_Conditions:int,Road_Surface_Conditions:int,Special_Conditions_at_Site:int,Carriageway_Hazards:int,Urban_or_Rural_Area:int,Did_Police_Officer_Attend_Scene_of_Accident:int,LSOA_of_Accident_Location:chararray,
+    	w_src:chararray, dist:double);
+};
+

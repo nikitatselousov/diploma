@@ -1,0 +1,6 @@
+define GetLogBounds(all_beans) returns result {
+    all_beans_grouped_all = group $all_beans all;
+    $result = foreach all_beans_grouped_all generate
+        MIN($all_beans.TIMESTAMP) as StartTime,
+        MAX($all_beans.TIMESTAMP) as EndTime;
+};

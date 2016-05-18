@@ -1,0 +1,3 @@
+define StoreCSVData(file, data) returns void {
+    store $data into '$file' using PigStorage(',', '-schema');
+};

@@ -1,0 +1,5 @@
+define LoadUndrData(file) returns result {
+    $result = load '$file' using PigStorage(',')
+    AS (SRC_ID:chararray,Dates:chararray, MaxTemperature:float, MeanTemperature:float, MinTemperature:float, DewPoint:float, MeanDew_Point:float, Min_Dewpoint:float, Max_Humidity:float,  Mean_Humidity:float,  Min_Humidity:float,  Max_Sea_Level_PressurehPa:float,  Mean_Sea_Level_Pressure:float,  Min_Sea_Level_Pressure:float,  Max_Visibility:float,  Mean_Visibility:float,  Min_Visibility:float,  Max_Wind_Speed:float,  Mean_Wind_Speed:float,  Max_Gust_Speed:float, Precipitation:float,  CloudCover:chararray,  Events:chararray, WindDirDegrees:chararray);
+};
+
