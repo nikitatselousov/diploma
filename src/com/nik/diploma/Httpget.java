@@ -32,10 +32,10 @@ public class Httpget {
         }
     }
     public static void mane() throws Exception{
-        PrintWriter writer = new PrintWriter("airport_weather1.csv", "UTF-8");
+        PrintWriter writer = new PrintWriter("underground_weather.csv", "UTF-8");
 
         for (String i : kekus.names()) {
-            CSVParser webParser = CSVParser.parse(new URL("http://www.wunderground.com/history/airport/"+i+"/2014/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2014&format=1"), Charset.forName("UTF-8"), CSVFormat.RFC4180);
+            CSVParser webParser = CSVParser.parse(new URL("https://www.wunderground.com/history/airport/"+i+"/2014/1/1/CustomHistory.html?dayend=31&monthend=12&yearend=2014&format=1"), Charset.forName("UTF-8"), CSVFormat.RFC4180);
             //Iterator iter = webParser.iterator();
             for (CSVRecord csvRecord : webParser) {
                 if (csvRecord.get(0).equalsIgnoreCase("GMT") || csvRecord.get(0).equalsIgnoreCase("")) {
@@ -53,4 +53,23 @@ public class Httpget {
         writer.close();
     }
 
+    public static void parseAirports() throws Exception{
+        PrintWriter writer = new PrintWriter("airports_coords.csv", "UTF-8");
+        CSVParser parser = CSVParser.parse(new File("/home/nik/wrk/diploma/input_data/airports.csv"), Charset.forName("UTF-8"), CSVFormat.RFC4180);
+        int n1 = 0, n2 = 0;
+        for (CSVRecord rec : parser){
+            n1 = 0;
+            for (String i : kekus.names()){
+                n1++;
+                if (i.equalsIgnoreCase(rec.get(5))){
+                    writer.println(rec.toString());
+                    n2++;
+                }
+            }
+        }
+        System.out.println(n1);
+        System.out.println(n2);
+
+        writer.close();
+    }
 }

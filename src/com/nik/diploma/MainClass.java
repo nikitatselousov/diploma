@@ -7,6 +7,6 @@ package com.nik.diploma;
 public class MainClass {
 
     public static void main(String[] args) throws Exception {
-        TrafficFlowJSGenerator.mane();
+        Httpget.mane();
     }
 }
