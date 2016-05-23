@@ -16,6 +16,7 @@ a11 = FOREACH a1 GENERATE
         FLATTEN(group) AS (Accident_Severity),
         COUNT (acc) as cnt;
 
+
 a2 = GROUP acc BY Road_Type;
 a22 = FOREACH a2 GENERATE
         FLATTEN(group) AS (Road_Type),
