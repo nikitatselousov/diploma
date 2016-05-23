@@ -3,9 +3,13 @@ import 'pig/macro/LoadCasualities.macro';
 import 'pig/macro/LoadVehicles.macro';
 import 'pig/macro/StoreCSVData.macro';
 
-acc = LoadRoadAcc('/diploma/DfTRoadSafety_Accidents_2014.csv');
-cass = LoadCasualities('/diploma/DfTRoadSafety_Casualties_2014.csv');
-vehs = LoadVehicles('/diploma/Road Safety - Vehicles by Make and Model 2014.csv');
+acc = LoadRoadAcc('/diploma/input_data/road_safety/DfTRoadSafety_Accidents_2014.csv');
+cass = LoadCasualities('/diploma/input_data/road_safety/DfTRoadSafety_Casualties_2014.csv');
+vehs = LoadVehicles('/diploma/input_data/road_safety/DfTRoadSafety_Vehicles_Marks_2014.csv');
+
+store acc into 'diploma/road_accidents' using org.elasticsearch.hadoop.pig.EsStorage();
+store cass into 'diploma/casualities' using org.elasticsearch.hadoop.pig.EsStorage();
+store vehs into 'diploma/vehicles' using org.elasticsearch.hadoop.pig.EsStorage();
 
 a1 = GROUP acc BY Accident_Severity;
 a11 = FOREACH a1 GENERATE
@@ -28,4 +32,4 @@ a44 = FOREACH a4 GENERATE
         COUNT (acc) as cnt;
 --dump a22;
 --dump a33;
-dump a44;
+--dump a44;

@@ -1,0 +1,15 @@
+{
+  "template": "diploma",
+  "order":    1,
+  "settings": {
+    "number_of_shards": 1
+  },
+
+      "mappings": {
+        "node_points" : {
+          "properties" : {
+            "location" : { "type" : "geo_point" }
+          }
+        }
+      }
+}
