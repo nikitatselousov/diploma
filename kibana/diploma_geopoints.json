@@ -1,12 +1,12 @@
 {
-  "template": "diploma",
+  "template": "diploma_geopoints",
   "order":    1,
   "settings": {
     "number_of_shards": 1
   },
 
       "mappings": {
-        "node_points" : {
+        "accidents_geopoints" : {
           "properties" : {
             "location" : { "type" : "geo_point" }
           }

@@ -1,0 +1,114 @@
+{
+    "settings" : {
+        "index" : {
+            "number_of_shards" : 5, 
+            "number_of_replicas" : 1 
+        }
+    },
+    "mappings" : {
+        "road_accidents" : {
+        "properties" : {
+          "Accident_Index" : {
+            "type" : "string"
+          },
+          "Accident_Severity" : {
+            "type" : "long"
+          },
+          "Carriageway_Hazards" : {
+            "type" : "long"
+          },
+          "Date" : {
+            "type" : "string"
+          },
+          "Day_of_Week" : {
+            "type" : "long"
+          },
+          "Did_Police_Officer_Attend_Scene_of_Accident" : {
+            "type" : "long"
+          },
+          "Junction_Control" : {
+            "type" : "long"
+          },
+          "Junction_Detail" : {
+            "type" : "long"
+          },
+          "LSOA_of_Accident_Location" : {
+            "type" : "string"
+          },
+          "Latitude" : {
+            "type" : "double"
+          },
+          "Light_Conditions" : {
+            "type" : "long"
+          },
+          "Local_Authority_District" : {
+            "type" : "long"
+          },
+          "Local_Authority_Highway" : {
+            "type" : "string"
+          },
+          "Location_Easting_OSGR" : {
+            "type" : "long"
+          },
+          "Location_Northing_OSGR" : {
+            "type" : "long"
+          },
+          "Longitude" : {
+            "type" : "double"
+          },
+          "Number_of_Casualties" : {
+            "type" : "long"
+          },
+          "Number_of_Vehicles" : {
+            "type" : "long"
+          },
+          "Pedestrian_Crossing_Human_Control" : {
+            "type" : "long"
+          },
+          "Pedestrian_Crossing_Physical_Facilities" : {
+            "type" : "long"
+          },
+          "Police_Force" : {
+            "type" : "long"
+          },
+          "Road_Surface_Conditions" : {
+            "type" : "long"
+          },
+          "Road_Type" : {
+            "type" : "long"
+          },
+          "Special_Conditions_at_Site" : {
+            "type" : "long"
+          },
+          "Speed_limit" : {
+            "type" : "long"
+          },
+          "Time" : {
+            "type" : "string"
+          },
+          "Urban_or_Rural_Area" : {
+            "type" : "long"
+          },
+          "Weather_Conditions" : {
+            "type" : "long"
+          },
+          "nd_Road_Class" : {
+            "type" : "long"
+          },
+          "nd_Road_Number" : {
+            "type" : "long"
+          },
+          "st_Road_Class" : {
+            "type" : "long"
+          },
+          "st_Road_Number" : {
+            "type" : "long"
+          },
+          "timestamp" : {
+            "type" : "date",
+            "format" : "epoch_second"
+          }
+        }
+      }
+    }
+}
