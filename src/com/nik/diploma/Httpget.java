@@ -55,21 +55,18 @@ public class Httpget {
 
     public static void parseAirports() throws Exception{
         PrintWriter writer = new PrintWriter("airports_coords.csv", "UTF-8");
-        CSVParser parser = CSVParser.parse(new File("/home/nik/wrk/diploma/input_data/airports.csv"), Charset.forName("UTF-8"), CSVFormat.RFC4180);
+        CSVParser parser = CSVParser.parse(new File("/home/nik/wrk/diploma/diploma/input_data/airports.csv"), Charset.forName("UTF-8"), CSVFormat.RFC4180);
         int n1 = 0, n2 = 0;
         for (CSVRecord rec : parser){
-            n1 = 0;
             for (String i : kekus.names()){
-                n1++;
-                if (i.equalsIgnoreCase(rec.get(5))){
-                    writer.println(rec.toString());
-                    n2++;
+                if (i.equalsIgnoreCase(rec.get(1))){
+                    for (int j=0; j < rec.size() - 1; j++){
+                        writer.print(rec.get(j) + ",");
+                    }
+                    writer.println(rec.get(rec.size()-1));
                 }
             }
         }
-        System.out.println(n1);
-        System.out.println(n2);
-
         writer.close();
     }
 }
